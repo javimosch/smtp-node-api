@@ -1,5 +1,6 @@
 import express from 'express';
 import dotenv from 'dotenv';
+import cors from 'cors';
 import emailRoutes from './routes/email.js';
 import { referrerMiddleware } from './utils/middleware.js';
 
@@ -12,6 +13,7 @@ const PORT = process.env.PORT || 3000;
 
 // Middleware
 app.use(express.json());
+app.use(cors());
 app.use(referrerMiddleware);
 
 // Routes

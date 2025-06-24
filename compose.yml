@@ -1,10 +1,12 @@
 version: '3.8'
 services:
   web:
-    image: nginx:alpine
+    image: node:alpine
+    working_dir: /app
     volumes:
-      - ./:/usr/share/nginx/html:ro
+      - ./:/app:ro
     ports:
-      - "5081:80"
-    environment:
-      - NGINX_PORT=80
+      - "5081:5081"
+    env_file:
+      - .env
+    command: npm start
