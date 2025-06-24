@@ -5,6 +5,7 @@ services:
     working_dir: /app
     volumes:
       - ./:/app:ro
+      - ./data:/app/data
     ports:
       - "5081:5081"
     env_file:

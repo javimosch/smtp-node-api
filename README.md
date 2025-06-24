@@ -130,3 +130,17 @@ The CLI provides the following features:
 ## Data Storage
 
 Configuration and whitelist data is stored in `data/config.json`.
+
+## Curl Example
+
+```bash
+curl -X POST "https://smtp.com/send-email" \ 
+  -H "Content-Type: application/json" \
+  -H "Referer: mydomain.com" \
+  -d '{
+    "subject": "Test Email",
+    "body": "Hello {name}, this is a test email sent on {date}",
+    "name": "John Doe",
+    "date": "2025-06-25"
+  }'
+```
