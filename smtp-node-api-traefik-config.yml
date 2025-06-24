@@ -4,7 +4,7 @@ http:
       entryPoints:
         - https
       service: smtp-node-api
-      rule: Host(`smtp-node-api.coolify.intrane.fr`)
+      rule: Host(`_PUBLISHED_DOMAIN_`)
       tls:
         certresolver: letsencrypt
   services:
@@ -12,4 +12,4 @@ http:
       loadBalancer:
         servers:
           -
-            url: 'http://100.86.93.41:5081'
+            url: 'REMOTE_SERVICE_IP'

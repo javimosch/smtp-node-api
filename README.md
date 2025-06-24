@@ -145,6 +145,36 @@ curl -X POST "https://smtp.com/send-email" \
   }'
 ```
 
+## Mini Admin CLI
+
+```bash
+npm run admin
+```
+
+This will open a menu with the following options:
+
+- Start CLI in remote
+- Follow logs in remote
+- Deploy to remote
+- Deploy domain to remote (Traefik gateway)
+- Exit
+
+### Deploy to remote
+
+This will deploy the API to the remote reacheable server with docker compose available (docker-compose binary)
+
+- Requires `REMOTE_HOST` to be set in .env
+
+### Deploy domain to remote (Traefik gateway)
+
+This will deploy the API to the remote reacheable server a coolify instance (With Traefik gateway as proxy and dynamic configurations in watch mode available)
+
+- Requires `REMOTE_DOMAIN_HOST`, `REMOTE_SERVICE_IP`, `PUBLISHED_DOMAIN` to be set in .env
+
+### Published domain
+
+The published domain is the domain that will be used to access the API. It must be a domain that is accessible from the internet and available in the Traefik gateway remote server (A record pointing to the remote server IP)
+
 ## Future Improvements
 
 - Web interface for managing whitelist

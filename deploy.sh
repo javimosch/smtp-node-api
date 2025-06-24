@@ -1,10 +1,17 @@
 #!/bin/bash
 
+source .env
+
 REMOTE_USER="ubuntu"
-REMOTE_HOST="100.86.93.41"
+REMOTE_HOST="${REMOTE_HOST}"
 REMOTE_PORT="22"
 REMOTE_PATH="~/docker/smtp-node-api"
 LOCAL_PATH="$(pwd)"
+
+if [ -z "${REMOTE_HOST}" ]; then
+  echo "❌ Error: REMOTE_HOST is not set in .env"
+  exit 1
+fi
 
 echo "🔧 Ensuring remote directory exists at ${REMOTE_HOST}:${REMOTE_PATH}..."
 ssh -p $REMOTE_PORT ${REMOTE_USER}@${REMOTE_HOST} "mkdir -p ${REMOTE_PATH}"
