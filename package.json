@@ -8,6 +8,10 @@
     "start": "node src/index.js",
     "cli": "node src/cli/index.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jarancibia/smtp-node-api.git"
+  },
   "dependencies": {
     "chalk": "^4.1.2",
     "cors": "^2.8.5",
