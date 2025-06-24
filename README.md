@@ -144,3 +144,9 @@ curl -X POST "https://smtp.com/send-email" \
     "date": "2025-06-25"
   }'
 ```
+
+## Future Improvements
+
+- Web interface for managing whitelist
+- Web interface for viewing email logs from both whitelisted and non-whitelisted referrers (with filtering options)
+- Web interface for configuring email logs retention period

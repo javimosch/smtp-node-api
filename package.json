@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "nodemon --verbose src/index.js",
     "start": "node src/index.js",
-    "cli": "node src/cli/index.js"
+    "cli": "node src/cli/index.js",
+    "admin": "./admin.sh"
   },
   "repository": {
     "type": "git",
