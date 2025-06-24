@@ -1,0 +1,10 @@
+version: '3.8'
+services:
+  web:
+    image: nginx:alpine
+    volumes:
+      - ./:/usr/share/nginx/html:ro
+    ports:
+      - "5081:80"
+    environment:
+      - NGINX_PORT=80

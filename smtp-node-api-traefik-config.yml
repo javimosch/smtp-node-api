@@ -1,0 +1,15 @@
+http:
+  routers:
+    smtp-node-api:
+      entryPoints:
+        - https
+      service: smtp-node-api
+      rule: Host(`smtp-node-api.coolify.intrane.fr`)
+      tls:
+        certresolver: letsencrypt
+  services:
+    smtp-node-api:
+      loadBalancer:
+        servers:
+          -
+            url: 'http://100.86.93.41:5081'
